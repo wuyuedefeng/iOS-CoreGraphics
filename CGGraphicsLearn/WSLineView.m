@@ -13,15 +13,17 @@
 - (void)drawRect:(CGRect)rect
 {
     //直线
-    [self drawLineFromPoint:CGPointMake(10, 250) toPoint:CGPointMake(310, 250)];
+//    [self drawLineFromPoint:CGPointMake(10, 250) toPoint:CGPointMake(310, 250)];
     //曲线
     [self drawArcLineFromPoint:CGPointMake(10, 250) toPoint:CGPointMake(310, 250) controlP:CGPointMake(120, 20)];
+    //二次曲线
+//    [self drawQuadCurveLineFromPoint:CGPointMake(10, 250) toPoint:CGPointMake(310, 250) controlP:CGPointMake(120, 20)];
     
 }
 
 
 //二次曲线函数、、http://donbe.blog.163.com/blog/static/138048021201052093633776/
-- (void)drawArcLineFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint controlP:(CGPoint)cPoint
+- (void)drawQuadCurveLineFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint controlP:(CGPoint)cPoint
 {
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     
@@ -30,6 +32,30 @@
     [path moveToPoint:fromPoint];
 
     [path addQuadCurveToPoint:toPoint controlPoint:cPoint];
+    
+    //设置颜色
+    [[UIColor blueColor] set];
+    
+    CGContextAddPath(ctx, path.CGPath);
+    
+    CGContextStrokePath(ctx);
+    
+}
+///曲线
+- (void)drawArcLineFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint controlP:(CGPoint)cPoint
+{
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    
+//    [path moveToPoint:fromPoint];
+//    
+//    [path addCurveToPoint:fromPoint controlPoint1:cPoint controlPoint2:toPoint];
+    
+    [path addArcWithCenter:CGPointMake(120, 120) radius:100 startAngle:0 endAngle:180 clockwise:YES];
+    
+    //设置颜色
+    [[UIColor greenColor] set];
     
     CGContextAddPath(ctx, path.CGPath);
     
