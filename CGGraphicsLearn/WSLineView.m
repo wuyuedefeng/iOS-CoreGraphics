@@ -12,23 +12,31 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    //[self drawLineFromPoint:CGPointMake(10, 10) toPoint:CGPointMake(250, 250)];
+    //直线
+    [self drawLineFromPoint:CGPointMake(10, 250) toPoint:CGPointMake(310, 250)];
+    //曲线
+    [self drawArcLineFromPoint:CGPointMake(10, 250) toPoint:CGPointMake(310, 250) controlP:CGPointMake(120, 20)];
     
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
+}
 
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(10, 100)];
+
+//画曲线
+- (void)drawArcLineFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint controlP:(CGPoint)cPoint
+{
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
     
-    [path addLineToPoint:CGPointMake(300, 100)];
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    
+    [path moveToPoint:fromPoint];
+
+    [path addQuadCurveToPoint:toPoint controlPoint:cPoint];
     
     CGContextAddPath(ctx, path.CGPath);
     
     CGContextStrokePath(ctx);
+    
 }
-
-
-
-//划线
+//画直线
 - (void)drawLineFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint
 {
     CGContextRef crf = UIGraphicsGetCurrentContext();
@@ -37,9 +45,16 @@
     [path moveToPoint:fromPoint];
     [path addLineToPoint:toPoint];
     
-    
-    
     CGContextAddPath(crf, path.CGPath);
+    
+    //设置线宽
+    CGContextSetLineWidth(crf, 10);
+    
+    //设置圆角
+    CGContextSetLineCap(crf, kCGLineCapRound);
+    
+    //设置颜色
+    [[UIColor redColor] set];
     
     //渲染
     CGContextStrokePath(crf);
