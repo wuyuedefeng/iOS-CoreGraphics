@@ -20,7 +20,7 @@
 }
 
 
-//画曲线
+//二次曲线函数、、http://donbe.blog.163.com/blog/static/138048021201052093633776/
 - (void)drawArcLineFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint controlP:(CGPoint)cPoint
 {
     CGContextRef ctx = UIGraphicsGetCurrentContext();
