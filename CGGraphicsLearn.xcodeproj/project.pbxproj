@@ -14,6 +14,8 @@
 		366AD7B71B1C99D90080CD53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 366AD7B61B1C99D90080CD53 /* Images.xcassets */; };
 		366AD7BA1B1C99D90080CD53 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 366AD7B81B1C99D90080CD53 /* LaunchScreen.xib */; };
 		366AD7C61B1C99D90080CD53 /* CGGraphicsLearnTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 366AD7C51B1C99D90080CD53 /* CGGraphicsLearnTests.m */; };
+		366AD7D11B1C9A330080CD53 /* WSLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 366AD7D01B1C9A330080CD53 /* WSLineView.m */; };
+		366AD7D31B1C9A7D0080CD53 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366AD7D21B1C9A7D0080CD53 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		366AD7BF1B1C99D90080CD53 /* CGGraphicsLearnTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CGGraphicsLearnTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		366AD7C41B1C99D90080CD53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		366AD7C51B1C99D90080CD53 /* CGGraphicsLearnTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGGraphicsLearnTests.m; sourceTree = "<group>"; };
+		366AD7CF1B1C9A330080CD53 /* WSLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSLineView.h; sourceTree = "<group>"; };
+		366AD7D01B1C9A330080CD53 /* WSLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSLineView.m; sourceTree = "<group>"; };
+		366AD7D21B1C9A7D0080CD53 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366AD7D31B1C9A7D0080CD53 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 		366AD79D1B1C99D90080CD53 = {
 			isa = PBXGroup;
 			children = (
+				366AD7D21B1C9A7D0080CD53 /* CoreGraphics.framework */,
 				366AD7A81B1C99D90080CD53 /* CGGraphicsLearn */,
 				366AD7C21B1C99D90080CD53 /* CGGraphicsLearnTests */,
 				366AD7A71B1C99D90080CD53 /* Products */,
@@ -81,6 +88,7 @@
 		366AD7A81B1C99D90080CD53 /* CGGraphicsLearn */ = {
 			isa = PBXGroup;
 			children = (
+				366AD7D41B1CA3CA0080CD53 /* customView */,
 				366AD7AD1B1C99D90080CD53 /* AppDelegate.h */,
 				366AD7AE1B1C99D90080CD53 /* AppDelegate.m */,
 				366AD7B01B1C99D90080CD53 /* ViewController.h */,
@@ -117,6 +125,15 @@
 				366AD7C41B1C99D90080CD53 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		366AD7D41B1CA3CA0080CD53 /* customView */ = {
+			isa = PBXGroup;
+			children = (
+				366AD7CF1B1C9A330080CD53 /* WSLineView.h */,
+				366AD7D01B1C9A330080CD53 /* WSLineView.m */,
+			);
+			name = customView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366AD7D11B1C9A330080CD53 /* WSLineView.m in Sources */,
 				366AD7B21B1C99D90080CD53 /* ViewController.m in Sources */,
 				366AD7AF1B1C99D90080CD53 /* AppDelegate.m in Sources */,
 				366AD7AC1B1C99D90080CD53 /* main.m in Sources */,
