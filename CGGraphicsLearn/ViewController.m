@@ -41,7 +41,7 @@
     bgView.backgroundColor = [UIColor grayColor];
     [bgView.layer setCornerRadius: 10.9];
     [bgView.layer setShadowOffset:CGSizeMake(0, 0)];
-    [bgView.layer setShadowRadius:1.f];
+    [bgView.layer setShadowRadius:10.f];//设置阴影半径
     [bgView.layer setShadowColor:[UIColor redColor].CGColor];
     bgView.layer.shadowOpacity = 1;
     [self.view addSubview:bgView];
