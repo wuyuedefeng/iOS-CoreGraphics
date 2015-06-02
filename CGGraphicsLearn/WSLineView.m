@@ -52,7 +52,7 @@
 //    
 //    [path addCurveToPoint:fromPoint controlPoint1:cPoint controlPoint2:toPoint];
     
-    [path addArcWithCenter:CGPointMake(120, 120) radius:100 startAngle:0 endAngle:180 clockwise:YES];
+    [path addArcWithCenter:CGPointMake(120, 120) radius:100 startAngle:0 endAngle:M_PI_2 clockwise:YES];
     
     //设置颜色
     [[UIColor greenColor] set];
