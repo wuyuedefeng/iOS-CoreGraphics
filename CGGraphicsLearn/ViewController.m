@@ -18,13 +18,33 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     WSLineView *lineView = [[WSLineView alloc] initWithFrame:self.view.bounds];
-    lineView.backgroundColor = [UIColor grayColor];
+    lineView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:lineView];
+    
+    [self setBgView2];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setBgView
+{
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(10, 200, 300, 300)];
+    bgView.backgroundColor = [UIColor whiteColor];
+    [bgView.layer setBorderWidth:0.5f];
+    [bgView.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    
+    [self.view addSubview:bgView];
+}
+
+- (void)setBgView2
+{
+    UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(10, 200, 300, 300)];
+   
+    bgView.backgroundColor = [UIColor grayColor];
+    [bgView.layer setCornerRadius: 10.9];
+    [bgView.layer setShadowOffset:CGSizeMake(0, 0)];
+    [bgView.layer setShadowRadius:1.f];
+    [bgView.layer setShadowColor:[UIColor redColor].CGColor];
+    bgView.layer.shadowOpacity = 1;
+    [self.view addSubview:bgView];
 }
 
 @end
