@@ -57,6 +57,9 @@
     //设置颜色
     [[UIColor greenColor] set];
     
+    //设置阴影颜色和偏移量
+    //    CGContextSetShadowWithColor (ctx, CGSizeMake(10, 10), 0.5, [UIColor blueColor].CGColor);
+    
     CGContextAddPath(ctx, path.CGPath);
     
     CGContextStrokePath(ctx);
